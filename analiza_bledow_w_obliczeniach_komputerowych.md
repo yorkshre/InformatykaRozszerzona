@@ -6,19 +6,6 @@
 
 ---
 
-## 2. Cele lekcji
-
-### Cele ogólne
-
-Po zakończeniu lekcji uczeń:
-
-- rozumie, dlaczego komputer nie zawsze przechowuje liczby rzeczywiste dokładnie,
-- zna podstawowe rodzaje błędów numerycznych,
-- potrafi obliczyć błąd bezwzględny i względny,
-- rozumie problem reprezentacji liczb zmiennoprzecinkowych,
-- potrafi bezpiecznie porównywać liczby typu `float`,
-- potrafi wykorzystać tolerancję `EPS`,
-- potrafi przeanalizować prosty program numeryczny w Pythonie.
 
 ### Cele szczegółowe
 
@@ -37,7 +24,7 @@ Uczeń:
 
 ---
 
-# 3. Wprowadzenie
+# 2. Wprowadzenie
 
 Komputery wykonują obliczenia z ogromną szybkością. Nie oznacza to jednak, że każda liczba i każdy wynik są przechowywane z matematyczną idealną dokładnością.
 
@@ -69,7 +56,7 @@ Odpowiedź związana jest ze sposobem reprezentowania liczb w pamięci komputera
 
 ---
 
-# 4. Jak komputer przechowuje liczby?
+# 3. Jak komputer przechowuje liczby?
 
 Komputery wykorzystują system binarny, czyli system o podstawie 2.
 
@@ -125,7 +112,7 @@ To prowadzi do **błędu reprezentacji**.
 
 ---
 
-# 5. Błąd reprezentacji
+# 4. Błąd reprezentacji
 
 ## Definicja
 
@@ -157,7 +144,7 @@ Oznacza to, że wewnętrzna reprezentacja liczby jest bardzo bliska `0.1`, ale n
 
 ---
 
-# 6. Standard IEEE 754
+# 5. Standard IEEE 754
 
 Liczby zmiennoprzecinkowe są zazwyczaj przechowywane zgodnie ze standardem **IEEE 754**.
 
@@ -179,7 +166,7 @@ W Pythonie typ `float` jest w typowej implementacji CPython zgodny z formatem po
 
 ---
 
-# 7. Błąd zaokrąglenia
+# 6. Błąd zaokrąglenia
 
 ## Definicja
 
@@ -215,7 +202,7 @@ Komputer zapisuje więc jej przybliżenie.
 
 ---
 
-# 8. Błąd obcięcia
+# 7. Błąd obcięcia
 
 ## Definicja
 
@@ -239,7 +226,7 @@ Pominięte składniki powodują błąd obcięcia.
 
 ---
 
-# 9. Przykład błędu obcięcia w Pythonie
+# 8. Przykład błędu obcięcia w Pythonie
 
 ```python
 import math
@@ -260,7 +247,7 @@ Możemy zwiększyć dokładność, dodając kolejne składniki szeregu.
 
 ---
 
-# 10. Porównanie rodzajów błędów
+# 9. Porównanie rodzajów błędów
 
 | Rodzaj błędu | Przyczyna | Przykład |
 |---|---|---|
@@ -272,7 +259,7 @@ Możemy zwiększyć dokładność, dodając kolejne składniki szeregu.
 
 ---
 
-# 11. Błąd bezwzględny
+# 10. Błąd bezwzględny
 
 Błąd bezwzględny informuje, o ile wynik przybliżony różni się od wartości dokładnej.
 
@@ -315,7 +302,7 @@ Błąd bezwzględny = 0.2
 
 ---
 
-# 12. Błąd względny
+# 11. Błąd względny
 
 Błąd względny uwzględnia skalę wartości.
 
@@ -368,7 +355,7 @@ Błąd względny = 2%
 
 ---
 
-# 13. Ćwiczenie – obliczanie błędów
+# 12. Ćwiczenie – obliczanie błędów
 
 Dane:
 
@@ -407,7 +394,7 @@ Błąd względny = 1.2%
 
 ---
 
-# 14. Problem z `float` w Pythonie
+# 13. Problem z `float` w Pythonie
 
 Sprawdź program:
 
@@ -442,7 +429,7 @@ Jest to konsekwencja reprezentacji liczb zmiennoprzecinkowych.
 
 ---
 
-# 15. Dlaczego `==` może być problemem?
+# 14. Dlaczego `==` może być problemem?
 
 Porównanie:
 
@@ -464,7 +451,7 @@ Dlatego często stosujemy tolerancję.
 
 ---
 
-# 16. Tolerancja EPS
+# 15. Tolerancja EPS
 
 `EPS` oznacza przyjętą tolerancję błędu.
 
@@ -509,7 +496,7 @@ else:
 
 ---
 
-# 17. Jak działa `abs()`?
+# 16. Jak działa `abs()`?
 
 Funkcja:
 
@@ -545,7 +532,7 @@ oznacza odległość pomiędzy wartościami `a` i `b`.
 
 ---
 
-# 18. Symulacja błędów numerycznych
+# 17. Symulacja błędów numerycznych
 
 Poniższy program wielokrotnie dodaje `0.1` do wartości `x`.
 
@@ -627,7 +614,7 @@ if __name__ == "__main__":
 
 ---
 
-# 19. Analiza programu krok po kroku
+# 18. Analiza programu krok po kroku
 
 ## Krok 1 – ustalenie tolerancji
 
@@ -693,7 +680,7 @@ Obliczamy odległość aktualnej wartości od wartości docelowej.
 
 ---
 
-# 20. Co by się stało bez EPS?
+# 19. Co by się stało bez EPS?
 
 Możemy napisać:
 
@@ -732,7 +719,7 @@ Dlatego w algorytmach numerycznych stosuje się tolerancję.
 
 ---
 
-# 21. Kumulacja błędów
+# 20. Kumulacja błędów
 
 Błędy zaokrągleń mogą się kumulować.
 
@@ -759,7 +746,7 @@ Każde pojedyncze przybliżenie jest bardzo małe, ale milion operacji może spo
 
 ---
 
-# 22. Przykład kumulacji błędu
+# 21. Przykład kumulacji błędu
 
 ```python
 x = 0.0
@@ -775,7 +762,7 @@ Program pozwala zobaczyć różnicę pomiędzy wartością oczekiwaną i obliczo
 
 ---
 
-# 23. Jak ograniczać błędy?
+# 22. Jak ograniczać błędy?
 
 ## Zasada 1 – nie używaj bezpośrednio `==` dla `float`
 
@@ -819,7 +806,7 @@ Nie ma jednak jednej uniwersalnej wartości EPS dla wszystkich problemów.
 
 ---
 
-# 24. Typ `float`
+# 23. Typ `float`
 
 Python wykorzystuje typ:
 
@@ -849,7 +836,7 @@ Duża precyzja nie oznacza jednak, że każda liczba rzeczywista może być repr
 
 ---
 
-# 25. `Decimal` – alternatywa dla `float`
+# 24. `Decimal` – alternatywa dla `float`
 
 W sytuacjach wymagających kontrolowanej arytmetyki dziesiętnej można użyć modułu:
 
@@ -888,7 +875,7 @@ Decimal(0.1)
 
 ---
 
-# 26. Kiedy `Decimal` może być przydatny?
+# 25. Kiedy `Decimal` może być przydatny?
 
 `Decimal` może być szczególnie użyteczny w zastosowaniach, w których istotna jest dokładność dziesiętna, np.:
 
@@ -902,7 +889,7 @@ Nie oznacza to jednak, że `Decimal` jest zawsze lepszy od `float`. Wybór typu 
 
 ---
 
-# 27. Najważniejsze wzory
+# 26. Najważniejsze wzory
 
 ## Błąd bezwzględny
 
@@ -931,7 +918,7 @@ Nie oznacza to jednak, że `Decimal` jest zawsze lepszy od `float`. Wybór typu 
 
 ---
 
-# 28. Ćwiczenia dla ucznia
+# 27. Ćwiczenia dla ucznia
 
 ## Ćwiczenie 1 – liczba `0.1`
 
