@@ -7,22 +7,6 @@
 ---
 
 
-### Cele szczegółowe
-
-Uczeń:
-
-1. wyjaśnia pojęcie błędu reprezentacji,
-2. wyjaśnia pojęcie błędu zaokrąglenia,
-3. wyjaśnia pojęcie błędu obcięcia,
-4. rozróżnia błąd bezwzględny i względny,
-5. zna wzory na błędy,
-6. wyjaśnia, dlaczego `0.1 + 0.2` może nie dać dokładnie `0.3`,
-7. stosuje `abs()` do porównywania liczb zmiennoprzecinkowych,
-8. stosuje tolerancję `EPS`,
-9. potrafi wskazać możliwość kumulacji błędów,
-10. wykorzystuje język Python do eksperymentów numerycznych.
-
----
 
 # 2. Wprowadzenie
 
