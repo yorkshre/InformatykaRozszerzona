@@ -1,6 +1,6 @@
-# 7. Obliczanie wartości wielomianu
+# Obliczanie wartości wielomianu
 
-## 7.1. Sformułowanie problemu
+## Sformułowanie problemu
 
 Pojęcie wielomianu znasz z lekcji matematyki. Wielomianem stopnia $n$ zmiennej rzeczywistej $x$ nazywamy funkcję postaci:
 
@@ -17,7 +17,7 @@ gdzie $a_n \neq 0$, $n$ jest liczbą naturalną dodatnią, a współczynniki $a_
 
 ---
 
-## 7.2. Obliczanie wartości wielomianu algorytmem naiwnym
+##  Obliczanie wartości wielomianu algorytmem naiwnym
 
 Wartość wielomianu dla danego argumentu można policzyć, podstawiając ten argument bezpośrednio do wzoru wielomianu. Sumowanie wyrazów wielomianu warto rozpocząć od wyrazu wolnego i wykorzystywać policzoną aktualnie potęgę $x$ do wyliczenia kolejnej ($x^n = x^{n-1} \cdot x$ dla $n > 1$).
 
@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
 ---
 
-## 7.3. Obliczanie wartości wielomianu za pomocą schematu Hornera
+## Obliczanie wartości wielomianu za pomocą schematu Hornera
 
 Liczbę operacji arytmetycznych podczas wyznaczania wartości wielomianu możemy zmniejszyć, jeśli wykorzystamy **schemat Hornera**. Jego działanie polega na wielokrotnym wyłączaniu $x$ przed nawias:
 $$W(x) = x \cdot (x \cdot (\dots (a_n \cdot x + a_{n-1}) + \dots + a_1) + a_0$$
