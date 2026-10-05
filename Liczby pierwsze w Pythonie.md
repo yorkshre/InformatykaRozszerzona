@@ -94,7 +94,7 @@ rozklad_na_czynniki(456)  # Wynik: 456 = 2 * 2 * 2 * 3 * 19
 
 ---
 
-## 📝 Zadania z rozwiązaniami
+## Zadania z rozwiązaniami
 
 ### Zadanie A
 Napisz program w Pythonie, który pobierze od użytkownika liczbę całkowitą i sprawdzi za pomocą schematu zoptymalizowanego ($\sqrt{n}$), czy jest ona liczbą pierwszą, wypisując odpowiedni komunikat (`"TAK"` lub `"NIE"`).
