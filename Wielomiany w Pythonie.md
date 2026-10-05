@@ -106,3 +106,29 @@ def horner_z_pliku(nazwa_pliku):
 
 # Przykład wywołania (wymaga utworzenia pliku wielomian.txt):
 # horner_z_pliku("wielomian.txt")
+```
+##Zadania do samodzielnego wykonania
+
+### Zadanie 1
+
+* **Treść zadania:** 
+  > Napisz program, który wczyta z klawiatury dwa wielomiany, a następnie wyznaczy wielomian będący ich sumą i go wypisze.
+
+* **Omówienie i wskazówki algorytmiczne:**
+  Zadanie polega na dodaniu do siebie dwóch wielomianów reprezentowanych np. za pomocą tablic współczynników, gdzie indeks tablicy odpowiada potędze zmiennej $x$.
+  1. **Wczytywanie danych:** Program musi najpierw pobrać stopień oraz współczynniki pierwszego wielomianu, a następnie stopień i współczynniki drugiego wielomianu.
+  2. **Dodawanie:** Suma wielomianów polega na dodaniu do siebie współczynników stojących przy tych samych potęgach zmiennej $x$.
+  3. **Różne stopnie:** Jeżeli wielomiany mają różne stopnie, należy pamiętać, że współczynniki przy wyższych potęgach brakujących w krótszym wielomianie wynoszą $0$.
+
+---
+
+### Zadanie 2
+
+* **Treść zadania:** 
+  > Napisz program, który wczyta z klawiatury podstawę systemu pozycyjnego z zakresu od 2 do 9, liczbę cyfr liczby oraz cyfry tej liczby i obliczy jej wartość dziesiętną, korzystając ze schematu Hornera.
+
+* **Omówienie i wskazówki algorytmiczne:**
+  Zadanie dotyczy konwersji liczby z systemu o podstawie $p$ ($2 \le p \le 9$) na system dziesiętny.
+  1. **Wczytywanie danych:** Użytkownik podaje podstawę systemu $p$, liczbę cyfr $n$ oraz kolejne cyfry tworzące tę liczbę (najczęściej od najbardziej znaczącej do najmniej znaczącej).
+  2. **Schemat Hornera:** Do obliczenia wartości dziesiętnej wykorzystuje się schemat Hornera, który w tym kontekście sprowadza się do efektywnego obliczania wartości wielomianu. Algorytm zaczyna od zera (lub pierwszej cyfry), a w każdym kroku mnoży dotychczasowy wynik przez podstawę systemu $p$ i dodaje kolejną cyfrę:
+     $$\text{wynik} = \text{wynik} \cdot p + \text{cyfry}[i]$$
