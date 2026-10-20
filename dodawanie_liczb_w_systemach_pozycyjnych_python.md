@@ -274,6 +274,59 @@ Suma:           3F
 
 **Ważne:** program wykonuje dodawanie bez zamiany całych liczb na system dziesiętny. Obsługuje również przeniesienie większe niż 1, co jest istotne w systemach o podstawach większych niż 2.
 
+# Odejmowanie przyklad
+
+```python
+def PrzeciwnaU2(b):
+    """Funkcja wyznaczająca liczbę przeciwną w kodzie U2:
+
+    1. Zamienia wszystkie bity na przeciwne (0 na 1, 1 na 0).
+    2. Dodaje 1 do wyniku (zgodnie z algorytmem bitowym).
+    """
+    # Krok 1: Negacja bitów
+    negowane = "".join("1" if bit == "0" else "0" for bit in b)
+
+    # Krok 2: Dodanie 1 (symulacja dodawania od prawej strony)
+    lista_bitow = list(negowane)
+    przeniesienie = 1
+
+    for i in range(len(lista_bitow) - 1, -1, -1):
+        if lista_bitow[i] == "1" and przeniesienie == 1:
+            lista_bitow[i] = "0"
+            przeniesienie = 1
+        elif lista_bitow[i] == "0" and przeniesienie == 1:
+            lista_bitow[i] = "1"
+            przeniesienie = 0
+            break
+        else:
+            break
+
+    return "".join(lista_bitow)
+
+
+def U2NaDziesietny(b):
+    """Pomocnicza funkcja zamieniająca ciąg bitów U2 na wartość dziesiętną."""
+    if b[0] == "1":
+        # Liczba ujemna: najpierw znajdujemy liczbę przeciwną, konwertujemy na int i dajemy minus
+        przeciwna = PrzeciwnaU2(b)
+        return -int(przeciwna, 2)
+    else:
+        return int(b, 2)
+
+
+# --- Rozwiązanie Ćwiczenia 4 ---
+if __name__ == "__main__":
+    # Dane z ćwiczenia
+    wejscie = "11110100"
+
+    wynik_przeciwna = PrzeciwnaU2(wejscie)
+    wartosc_poczatkowa = U2NaDziesietny(wejscie)
+    wartosc_przeciwna = U2NaDziesietny(wynik_przeciwna)
+
+    print(f"Liczba początkowa U2: {wejscie} = {wartosc_poczatkowa}")
+    print(f"Liczba przeciwna U2:   {wynik_przeciwna} = {wartosc_przeciwna}")
+
+```
 ## 7. Ćwiczenia dla uczniów
 
 ### Zadanie 1. Dodawanie binarne
