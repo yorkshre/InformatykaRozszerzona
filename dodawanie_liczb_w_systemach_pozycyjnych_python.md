@@ -327,6 +327,117 @@ if __name__ == "__main__":
     print(f"Liczba przeciwna U2:   {wynik_przeciwna} = {wartosc_przeciwna}")
 
 ```
+# Mnożenie przyklad
+``` python
+def Dodaj(a, b, podstawa=2):
+  """Funkcja pomocnicza dodająca dwie liczby w systemie dwójkowym."""
+  wynik = ""
+  przeniesienie = 0
+  i = len(a) - 1
+  j = len(b) - 1
+
+  while i >= 0 or j >= 0 or przeniesienie > 0:
+    cyfra_a = int(a[i]) if i >= 0 else 0
+    cyfra_b = int(b[j]) if j >= 0 else 0
+    suma = cyfra_a + cyfra_b + przeniesienie
+    przeniesienie = suma // podstawa
+    wynik = str(suma % podstawa) + wynik
+    i -= 1
+    j -= 1
+  return wynik
+
+
+def MnozBinary(a, b):
+  """Rozwiązanie Ćwiczenia 6: Mnożenie dwóch liczb binarnych zapisanych jako napisy."""
+  c = "0"
+  d = len(b) - 1
+
+  for i in range(d, -1, -1):
+    if b[i] == "1":
+      # Dodanie a z odpowiednią liczbą zer na końcu (przesunięcie w lewo)
+      zera = "0" * (d - i)
+      pom = a + zera if a != "0" else "0"
+      c = Dodaj(c, pom, 2)
+
+  return c.lstrip("0") if c.lstrip("0") else "0"
+
+
+# Przykład użycia:
+if __name__ == "__main__":
+  liczba1 = "1110"  # odpowiednik 14
+  liczba2 = "1101"  # odpowiednik 13
+  wynik = MnozBinary(liczba1, liczba2)
+  print(f"Iloczyn binarny {liczba1} * {liczba2} = {wynik}")
+
+```
+Mnożenie różnych systemów pozycyjnych
+
+
+``` python
+def DodajSystem(a, b, podstawa):
+  """Dodaje dwie liczby w systemie o zadanej podstawie."""
+  wynik = ""
+  przeniesienie = 0
+  i = len(a) - 1
+  j = len(b) - 1
+
+  while i >= 0 or j >= 0 or przeniesienie > 0:
+    cyfra_a = int(a[i]) if i >= 0 else 0
+    cyfra_b = int(b[j]) if j >= 0 else 0
+    suma = cyfra_a + cyfra_b + przeniesienie
+    przeniesienie = suma // podstawa
+    wynik = str(suma % podstawa) + wynik
+    i -= 1
+    j -= 1
+  return wynik
+
+
+def MnozPrzezCfr(cfr, liczba, podstawa):
+  """Mnoży wielocyfrową liczbę przez pojedynczą cyfrę w systemie o zadanej podstawie."""
+  przn = 0
+  wynik = ""
+
+  for i in range(len(liczba) - 1, -1, -1):
+    iloczyn = cfr * int(liczba[i]) + przn
+    przn = iloczyn // podstawa
+    wynik = str(iloczyn % podstawa) + wynik
+
+  if przn > 0:
+    wynik = str(przn) + wynik
+
+  return wynik if wynik else "0"
+
+
+def MnozSystem(a, b, podstawa):
+  """Funkcja główna mnożąca dwie liczby w systemie pozycyjnym."""
+  c = "0"
+  d = len(b) - 1
+
+  for i in range(d, -1, -1):
+    cfr = int(b[i])
+    pom = MnozPrzezCfr(cfr, a, podstawa)
+
+    # Dopisywanie zer (odpowiednik pętli for z podręcznika C++)
+    zera = "0" * (d - i)
+    if pom != "0":
+      pom = pom + zera
+    else:
+      pom = "0"
+
+    c = DodajSystem(c, pom, podstawa)
+
+  return c.lstrip("0") if c.lstrip("0") else "0"
+
+
+# Przykład użycia dla systemu o podstawie 3 lub 10:
+if __name__ == "__main__":
+  podstawa = 10
+  a = "123"
+  b = "45"
+  wynik = MnozSystem(a, b, podstawa)
+  print(f"Iloczyn w systemie {podstawa}: {a} * {b} = {wynik}")
+
+```
 ## 7. Ćwiczenia dla uczniów
 
 ### Zadanie 1. Dodawanie binarne
